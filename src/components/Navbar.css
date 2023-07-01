@@ -1,0 +1,24 @@
+.navbarContainer {
+    /* background-color: rgb(97, 164, 209);     */
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 10%;    
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    font-size: 17px;
+    padding-top: 10px;   
+}
+
+.menu > div:hover {
+    color: brown;
+    transition: 0.4s;
+    border-bottom: 1px solid brown;
+    cursor: pointer;
+}
+
