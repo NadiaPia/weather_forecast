@@ -1,0 +1,59 @@
+.todayContainer {    
+    display: flex; 
+   padding-top: 30px;   
+}
+
+.todayContent {
+    display: flex; 
+    flex-direction: column;
+    height: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* margin-left: 20px; */
+    color: white;
+    /* background-color: darkolivegreen; */
+    width: 100%;
+    justify-content: center;
+
+    
+}
+
+
+.currentTemp {    
+    display: flex;
+    justify-content: space-between;
+   
+    width: 100%;
+   
+}
+
+.tempValue {
+    font-size: 50px;    
+    display: flex;
+
+}
+
+.celsium {    
+    font-size: 30px;
+    color: white;    
+    margin: 0;
+}
+
+.symbol {    
+    width: 50%;
+}
+.symbolContainer {
+    
+    width: 30%;
+}
+
+.feelsAndprecip {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: small;
+}
+
+.precipitation {
+    width: 30%;
+}
