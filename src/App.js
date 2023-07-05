@@ -11,7 +11,8 @@ function App() {
   const[location, setLocation] = useState('');
   const[currentTemp, setCurrentTemp] = useState('');
   const[precipitation, setPrecipitation] = useState(''); 
-  const[feelsLike, setFeelsLike]= useState(''); 
+  const[feelsLike, setFeelsLike]= useState('');
+  const [localTime, setLocalTime] = useState('')
 
   // useEffect(() => {
   //   getWeather()
@@ -22,17 +23,19 @@ function App() {
   axios.get(`http://api.weatherapi.com/v1/forecast.json?key=d27e5f3580d34ff991c55923232906&q=${location}&days=1&aqi=yes&alerts=no`)
   .then((response)=> {    
     console.log("response.dataaaaaaaaaaa", response.data);
-    console.log("response.data.location.name", response.data.location.name);
-    console.log("response.data.current.temp_c", response.data.current.temp_c);
-    console.log("response.data.current.condition.text", response.data.current.condition.text);
-    console.log("response.data.current.feelslike_c", response.data.current.feelslike_c);
-
+    //console.log("response.data.location.name", response.data.location.name);
+    //console.log("response.data.current.temp_c", response.data.current.temp_c);
+    //console.log("response.data.current.condition.text", response.data.current.condition.text);
+    //console.log("response.data.current.feelslike_c", response.data.current.feelslike_c);
+    //console.log("response.data.location.localtime_epoch", response.data.location.localtime_epoch); //1688522004
+    //console.log("response.data.location.localtime", response.data.location.localtime); //1688522004
 
 
     setLocation(response.data.location.name);
     setCurrentTemp(response.data.current.temp_c);
     setPrecipitation(response.data.current.condition.text);
     setFeelsLike(response.data.current.feelslike_c);
+    setLocalTime(response.data.location.localtime)
 
   }).catch((error) => {
     console.log("errorrrr", error)
@@ -67,6 +70,7 @@ function App() {
        currentTemp={currentTemp} 
        precipitation={precipitation}
        feelsLike={feelsLike}
+       localTime={localTime}
        />}
       {currentComponent === "Tomorrow" && <p>Tomorrow Component</p>}
       {currentComponent === "3 Days" && <p>3 Days Component</p>}
