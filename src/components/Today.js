@@ -1,58 +1,25 @@
 import React from 'react';
 import './Today.css';
-import cloud from '../cloud.png'
+import cloud from '../cloud.png';
+import {timeFormater} from "../helpers/timeHelpers"
 
 
 function Today(props) {
 
     const localData = props.localTime; //2023-07-05 12:43
-    //console.log("localData", localData)
     
+    const {year, day, month, hour, min} = timeFormater(props.localTime)
 
-    const localDataArray = localData.split(/[\s-]+/) //['2023', '07', '05', '12:43']
-    //console.log("localDataArray", localDataArray)
-    
-    const year = localDataArray[0];  //  '2023'
-
-    const day = () => {
-        if(!localDataArray[2]) return;
-        if (localDataArray[2][0] === '0') {
-            return localDataArray[2].slice(1);            
-        } else {
-            return localDataArray[2];
-        }        
-    };
-    //console.log("day", day())
-
-    const month = localDataArray[1];
-    let monthObject = {
-        '01': 'Jan',
-        '02': 'Feb',
-        '03': 'Mar',
-        '04': 'Apr',
-        '05': 'May',
-        '06': 'Jun',
-        '07': 'Jul',
-        '08': 'Aug',
-        '09': 'Sep',
-        '10': 'Oct',
-        '11': 'Nov',
-        '12': 'Dec'
-    }
-    
-    const monthWord = monthObject[month]
-    //console.log(monthWord)//Jul
-
-    const time = localDataArray[3]; //'13:15'  
-
-
+    const hourly = props.hourlyForecast.map((hour,i) => {
+        console.log(i, hour.time, hour.temp_c)
+    });
     
     return (
         <div className="todayContainer">
             <div className="todayContent">
 
                 <div className="currentTime">
-                    {localData && <div className="data">{`${monthWord} ${day()}, ${time}`}</div>}          
+                    {localData && <div className="data">{`${month} ${day}, ${hour}:${min}`}</div>}          
 
                 </div>
                 

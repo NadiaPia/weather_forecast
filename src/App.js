@@ -12,7 +12,8 @@ function App() {
   const[currentTemp, setCurrentTemp] = useState('');
   const[precipitation, setPrecipitation] = useState(''); 
   const[feelsLike, setFeelsLike]= useState('');
-  const [localTime, setLocalTime] = useState('')
+  const [localTime, setLocalTime] = useState('');
+  const [hourlyForecast, setHourlyForecast] = useState([]);
 
   // useEffect(() => {
   //   getWeather()
@@ -29,13 +30,13 @@ function App() {
     //console.log("response.data.current.feelslike_c", response.data.current.feelslike_c);
     //console.log("response.data.location.localtime_epoch", response.data.location.localtime_epoch); //1688522004
     //console.log("response.data.location.localtime", response.data.location.localtime); //1688522004
-
-
+    console.log("setHourlyForecast", response.data.forecast.forecastday[0].hour)
     setLocation(response.data.location.name);
     setCurrentTemp(response.data.current.temp_c);
     setPrecipitation(response.data.current.condition.text);
     setFeelsLike(response.data.current.feelslike_c);
-    setLocalTime(response.data.location.localtime)
+    setLocalTime(response.data.location.localtime);
+    setHourlyForecast(response.data.forecast.forecastday[0].hour)
 
   }).catch((error) => {
     console.log("errorrrr", error)
@@ -65,12 +66,19 @@ function App() {
 
     <div className="App">
       <div className="content">
-      <Navbar setLocation={setLocation} location={location} setCurrentComponent={setCurrentComponent} getWeather={getWeather}/>
-      {currentComponent === "Today" && <Today
+      <Navbar setLocation={setLocation}
+       location={location} 
+       setCurrentComponent={setCurrentComponent} 
+       getWeather={getWeather}
+       />
+       
+      {currentComponent === "Today" && 
+      <Today
        currentTemp={currentTemp} 
        precipitation={precipitation}
        feelsLike={feelsLike}
        localTime={localTime}
+       hourlyForecast={hourlyForecast}
        />}
       {currentComponent === "Tomorrow" && <p>Tomorrow Component</p>}
       {currentComponent === "3 Days" && <p>3 Days Component</p>}
