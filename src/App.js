@@ -30,7 +30,7 @@ function App() {
     //console.log("response.data.current.feelslike_c", response.data.current.feelslike_c);
     //console.log("response.data.location.localtime_epoch", response.data.location.localtime_epoch); //1688522004
     //console.log("response.data.location.localtime", response.data.location.localtime); //1688522004
-    console.log("setHourlyForecast", response.data.forecast.forecastday[0].hour)
+    //console.log("setHourlyForecast", response.data.forecast.forecastday[0].hour)
     setLocation(response.data.location.name);
     setCurrentTemp(response.data.current.temp_c);
     setPrecipitation(response.data.current.condition.text);
@@ -43,26 +43,9 @@ function App() {
   })
 }
 
-  return (
-    // <div className="App">
-    //   <button onClick={getWeather}>Show Weather</button>
-
-    //   <div>
-    //     <h1>{location} </h1>  
-    //     <input 
-    //       type="text"
-    //       placeholder='City...'
-    //       onChange={(event) => { setLocation(event.target.value) }}
-    //       />
-    //       <div>
-    //         <h2>Current Weather</h2>
-    //         <h3>temperature: {currentTemp} <span>&#8451;</span></h3>
-    //         <h3>precipitation: {precipitation} </h3>
 
 
-    //       </div>
-    //   </div>
-    // </div>
+  return (    
 
     <div className="App">
       <div className="content">
@@ -71,7 +54,7 @@ function App() {
        setCurrentComponent={setCurrentComponent} 
        getWeather={getWeather}
        />
-       
+
       {currentComponent === "Today" && 
       <Today
        currentTemp={currentTemp} 
