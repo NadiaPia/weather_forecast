@@ -40,7 +40,7 @@ export const timeFormater = (datetime) => {
     const month = monthObject[dateTimeArray[1]];
     //console.log(monthWord)//Jul
 
-    const [hour, min] = dateTimeArray[3].split(":"); //'13:15'
+    const [hour, min] = dateTimeArray[3]? dateTimeArray[3].split(":") : ["", ""]; //'13:15' //because Tomorrow component may have no time
 
     return {year, day, month, hour, min}
 }

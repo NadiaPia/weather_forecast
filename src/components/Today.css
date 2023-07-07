@@ -1,6 +1,6 @@
 .todayContainer {    
     display: flex; 
-   padding-top: 30px;   
+   padding-top: 30px;
 }
 
 .todayContent {
@@ -13,9 +13,7 @@
     color: white;
     /* background-color: darkolivegreen; */
     width: 100%;
-    justify-content: center;
-
-    
+    justify-content: center;    
 }
 
 
@@ -62,4 +60,9 @@
     display: flex;    
     justify-content: flex-start;
     font-size: small;
+}
+
+.chartContainer {
+    background-color: rgba(224, 218, 164, 0.336);
+    margin-top: 10px;
 }

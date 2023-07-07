@@ -1,0 +1,64 @@
+.tomorrowContainer {    
+    display: flex; 
+    flex-direction: column;
+   padding-top: 30px;
+   /* background-color: aquamarine;    */
+}
+
+.tomorrowContent {
+    display: flex; 
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 40%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* margin-left: 20px; */
+    color: white;
+    /* background-color: darkolivegreen; */
+    width: 100%;    
+    
+}
+
+.tomorrowDate {
+    display: flex;
+    flex-direction: column;    
+    /* background-color: red; */
+    width: 50%;
+    
+}
+.date {
+    /* background-color: aqua; */
+    display: flex;
+    font-size: small;
+    
+}
+
+.tomorrowCondition { 
+    display: flex;  
+    /* background-color: burlywood; */
+    justify-content: center;         
+    width: 50%;   
+
+}
+
+.tomorrowConditionIcon {
+    width: 40%;
+    /* background-color: blueviolet; */
+
+      
+}
+
+.tomorrowConditionText {
+    /* background-color: chartreuse;     */
+    display: flex; 
+    justify-content: flex-start; 
+    margin-top: 10px;
+
+}
+
+.tomorrowChartContainer {
+    background-color: rgba(224, 218, 164, 0.336);
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
