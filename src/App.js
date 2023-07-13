@@ -4,6 +4,8 @@ import React, { useState} from 'react';
 import Navbar from './components/Navbar';
 import Today from './components/Today';
 import Tomorrow from './components/Tomorrow';
+import NDays from './components/NDays';
+
 
 
 function App() {
@@ -44,7 +46,7 @@ function App() {
 
         {currentComponent === "Tomorrow" && data && <Tomorrow data={data} />}
 
-        {currentComponent === "3 Days" && <p>3 Days Component</p>}
+        {currentComponent === "3 Days" && <NDays data={data} />}
       </div>
     </div>
   );

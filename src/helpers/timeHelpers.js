@@ -42,5 +42,5 @@ export const timeFormater = (datetime) => {
 
     const [hour, min] = dateTimeArray[3]? dateTimeArray[3].split(":") : ["", ""]; //'13:15' //because Tomorrow component may have no time
 
-    return {year, day, month, hour, min}
-}
+    return {year, day, month, hour, min};
+};
