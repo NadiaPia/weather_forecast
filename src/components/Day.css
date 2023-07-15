@@ -1,5 +1,53 @@
-.dayContainer {
-    background-color: aqua;
+.dayContainer {    
+    display: flex;
+    justify-content: center;
+    /* background-color: yellowgreen; */    
+}
+
+.dayComponent {
+    /* background-color: aqua; */
     width: 90%;
-    border: 1px solid brown;
+    background-color: rgba(224, 218, 164, 0.4);
+    color: white;
+    margin-bottom: 5px;
+    /* height: 50px */
+    padding: 5px;
+    
+}
+
+.dayHeader {
+    /* background-color: brown; */
+    display: flex;  
+    justify-content: space-between;
+    /* background-color: brown; */
+}
+
+.dayHeaderLeft {
+    /* background-color: yellowgreen; */
+    font-size: small;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.monthDay {
+    font-weight: bold;
+}
+
+.dayHeaderRight {
+    /* background-color: yellowgreen; */
+    display: flex; 
+}
+
+.temp {
+    display: flex; 
+    font-size: small;
+
+
+}
+
+.celsiumDay {    
+    color: white;    
+    margin: 0;    
 }
