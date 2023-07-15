@@ -43,11 +43,27 @@
 .temp {
     display: flex; 
     font-size: small;
-
-
 }
 
 .celsiumDay {    
     color: white;    
     margin: 0;    
+}
+
+.dayBody {
+    margin-top: 10px;
+    background-color: rgba(224, 218, 164, 0.6);
+}
+
+.humidity {
+    display: flex;
+    font-size: small;
+    padding: 2px 10px;
+
+}
+
+.humidityLabel {
+    width: 50%;
+    display: flex; 
+
 }
