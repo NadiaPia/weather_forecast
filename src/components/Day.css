@@ -59,11 +59,31 @@
     display: flex;
     font-size: small;
     padding: 2px 10px;
-
 }
 
 .humidityLabel {
     width: 50%;
-    display: flex; 
-
+    display: flex;
 }
+
+.dayFooter {
+    display: flex;
+    margin-top: 20px;
+    /* background-color: yellowgreen; */
+    color:black;
+    font-size: small;
+    
+}
+
+.temp {
+    display: flex;
+    /* background-color: aqua; */
+    justify-content: center;
+}
+
+.hourBlock {
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+}
+

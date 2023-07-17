@@ -20,7 +20,10 @@ function Day(props) {
 
 
 
-  const { year, day, month, hour, min } = timeFormater(props.day.date)
+  const { year, day, month, hour, min } = timeFormater(props.day.date);
+  // const am_pm = () => {
+
+  // }
   return (
     <div className="dayContainer">
       <div className="dayComponent">
@@ -44,12 +47,12 @@ function Day(props) {
 
         <div className="dayBody">
 
-        <div className="humidity">
+          <div className="humidity">
             <div className="humidityLabel">
               Max. Wind
             </div>
             <div className="humidityValue">
-            {`${props.day.day.maxwind_kph} km/h`}
+              {`${props.day.day.maxwind_kph} km/h`}
             </div>
           </div>
 
@@ -59,7 +62,7 @@ function Day(props) {
               Humidity
             </div>
             <div className="humidityValue">
-            {`${props.day.day.avghumidity}%`}
+              {`${props.day.day.avghumidity}%`}
             </div>
           </div>
 
@@ -68,10 +71,26 @@ function Day(props) {
               Sunrise/Sunset
             </div>
             <div className="humidityValue">
-            {`${props.day.astro.sunrise} / ${props.day.astro.sunset}`}
+              {`${props.day.astro.sunrise} / ${props.day.astro.sunset}`}
             </div>
           </div>
 
+
+        </div>
+
+        <div className="dayFooter">
+
+          {props.day.hour.map((everyhour) => {
+            return (
+              <div className="hourBlock">
+                <div className='temp'>{everyhour.temp_c}<p className="celsiumDay">&#176;</p></div>
+                <div className='hourSymbol'><img alt="pic" src={everyhour.condition.icon} /></div>
+                <div className='hourValue'>
+                  {Number(timeFormater(everyhour.time).hour).toString()}{Number(timeFormater(everyhour.time).hour).toString() <= 11? <spin> a.m.</spin> : <spin> p.m.</spin>}
+                  </div>
+              </div>
+            )
+          })}
 
         </div>
 
