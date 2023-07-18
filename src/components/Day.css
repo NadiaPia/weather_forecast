@@ -4,13 +4,10 @@
     /* background-color: yellowgreen; */    
 }
 
-.dayComponent {
-    /* background-color: aqua; */
-    width: 90%;
-    
+.dayComponent {   
+    width: 90%;    
     color: white;
-    margin-bottom: 5px;
-    /* height: 50px */
+    margin-bottom: 5px;   
     padding: 5px;
     background-color: rgba(224, 218, 164, 0.3);
 }
@@ -18,18 +15,11 @@
     background-color: rgba(224, 218, 164, 0.4);
 }
 
-.dayHeader {
-    /* background-color: brown; */
+.dayHeader {    
     display: flex;  
-    justify-content: space-between;
-    /* background-color: brown; */
-    /* background-color: rgba(224, 218, 164, 0);     */
+    justify-content: space-between;    
 }
-
-
-
-.dayHeaderLeft {
-    /* background-color: yellowgreen; */
+.dayHeaderLeft {    
     font-size: small;
     width: 50%;
     display: flex;
@@ -41,8 +31,7 @@
     font-weight: bold;
 }
 
-.dayHeaderRight {
-    /* background-color: yellowgreen; */
+.dayHeaderRight {   
     display: flex; 
 }
 
@@ -63,6 +52,9 @@
 .dayBody {
     margin-top: 10px;
     background-color: rgba(224, 218, 164, 0.3);
+    /* background:radial-gradient( rgba(224, 218, 164, 0.8) , rgba(224, 218, 164, 0) ); */
+   
+    
 }
 
 .humidity {
@@ -79,9 +71,7 @@
 .dayFooter {
     display: flex;
     margin-top: 20px;
-    padding-bottom: 10px;
-
-    /* background-color: yellowgreen; */
+    padding-bottom: 10px;    
     color:white;
     font-size: small;
     min-width: 100%;
@@ -94,7 +84,6 @@
     /* background: gray; */
     
 }
-
 
 /* Track */
 .dayFooter::-webkit-scrollbar-track {
@@ -109,15 +98,7 @@
  
 /* Handle */
 .dayFooter::-webkit-scrollbar-thumb {
-  background: transparent; 
-  
-}
-
-/* Handle on hover */
-.dayFooter::-webkit-scrollbar-thumb:horizontal:hover {
-  /* background: #555;  */
-  
-  
+  background: transparent;   
 }
 
 .dayFooter::-webkit-scrollbar-thumb:horizontal{
@@ -132,13 +113,11 @@
   } */
 
 .temp {
-    display: flex;
-    /* background-color: aqua; */
+    display: flex;   
     justify-content: center;
 }
 
-.hourBlock {
-    /* background-color: brown; */
+.hourBlock {    
     display: flex;
     flex-direction: column;
 }

@@ -7,13 +7,9 @@ import { timeFormater } from "../helpers/timeHelpers";
 
 function Day(props) {
   console.log("props.day", props.day);
-  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  //const d = (new Date(props.day.date)).getDay();
-  //let dayOfWeek = weekday[(new Date(props.day.date)).getDay()];
-
   const[hidden, setHidden] = useState(true);
 
-
+  const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
 
   let date = new Date(props.day.date);
   const offset = (new Date()).getTimezoneOffset(); //get differance with UTC in minutes

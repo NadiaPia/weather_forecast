@@ -10,7 +10,7 @@ function Tomorrow(props) {
 
     const [tempData, setTempData] = useState(null)
 
-    const { year, day, month, hour, min } = timeFormater(props.data.forecast.forecastday[1].date)
+    const { year, day, month, hour, min, dayOfWeek } = timeFormater(props.data.forecast.forecastday[1].date)
     //console.log("props.data.forecast.forecastday[1].date", props.data.forecast.forecastday[1].date)
 
     const hourly = (props.data.forecast.forecastday[0].hour || []).map((hour, i) => {
@@ -37,10 +37,10 @@ function Tomorrow(props) {
     }, [props.data.forecast.forecastday[1].hour])
     return (
         <div className="tomorrowContainer">
-            <div className="tomorrowContent">
+            <div className="tomorrowContent"> 
 
                 <div className="tomorrowDate">
-                    {props.data.forecast.forecastday[1].date && <div className="date">{`${month} ${day}`}</div>}
+                    {props.data.forecast.forecastday[1].date && <div className="date">{`${dayOfWeek}, ${month} ${day}`}</div>}
                     <div className="tomorrowConditionText">{props.data.forecast.forecastday[1].day.condition.text}</div>
                 </div>
 
