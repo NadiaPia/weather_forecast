@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Day.css';
 import { timeFormater } from "../helpers/timeHelpers";
+
 
 
 
@@ -9,6 +10,8 @@ function Day(props) {
   const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   //const d = (new Date(props.day.date)).getDay();
   //let dayOfWeek = weekday[(new Date(props.day.date)).getDay()];
+
+  const[hidden, setHidden] = useState(true);
 
 
 
@@ -21,14 +24,12 @@ function Day(props) {
 
 
   const { year, day, month, hour, min } = timeFormater(props.day.date);
-  // const am_pm = () => {
-
-  // }
+  
   return (
     <div className="dayContainer">
       <div className="dayComponent">
 
-        <div className="dayHeader">
+        <div className="dayHeader" onClick={() => setHidden(prev => !prev)}>
           <div className="dayHeaderLeft">
             <div className="monthDay">{`${dayOfWeek}, ${month} ${day}`}</div>
 
@@ -45,53 +46,56 @@ function Day(props) {
           </div>
         </div>
 
-        <div className="dayBody">
 
-          <div className="humidity">
-            <div className="humidityLabel">
-              Max. Wind
-            </div>
-            <div className="humidityValue">
-              {`${props.day.day.maxwind_kph} km/h`}
-            </div>
-          </div>
+        <div className={hidden? "hiddenPart": ""}>
+          <div className="dayBody">
 
-
-          <div className="humidity">
-            <div className="humidityLabel">
-              Humidity
-            </div>
-            <div className="humidityValue">
-              {`${props.day.day.avghumidity}%`}
-            </div>
-          </div>
-
-          <div className="humidity">
-            <div className="humidityLabel">
-              Sunrise/Sunset
-            </div>
-            <div className="humidityValue">
-              {`${props.day.astro.sunrise} / ${props.day.astro.sunset}`}
-            </div>
-          </div>
-
-
-        </div>
-
-        <div className="dayFooter">
-
-          {props.day.hour.map((everyhour) => {
-            return (
-              <div className="hourBlock">
-                <div className='temp'>{everyhour.temp_c}<p className="celsiumDay">&#176;</p></div>
-                <div className='hourSymbol'><img alt="pic" src={everyhour.condition.icon} /></div>
-                <div className='hourValue'>
-                  {Number(timeFormater(everyhour.time).hour).toString()}{Number(timeFormater(everyhour.time).hour).toString() <= 11? <spin> a.m.</spin> : <spin> p.m.</spin>}
-                  </div>
+            <div className="humidity">
+              <div className="humidityLabel">
+                Max. Wind
               </div>
-            )
-          })}
+              <div className="humidityValue">
+                {`${props.day.day.maxwind_kph} km/h`}
+              </div>
+            </div>
 
+
+            <div className="humidity">
+              <div className="humidityLabel">
+                Humidity
+              </div>
+              <div className="humidityValue">
+                {`${props.day.day.avghumidity}%`}
+              </div>
+            </div>
+
+            <div className="humidity">
+              <div className="humidityLabel">
+                Sunrise/Sunset
+              </div>
+              <div className="humidityValue">
+                {`${props.day.astro.sunrise} / ${props.day.astro.sunset}`}
+              </div>
+            </div>
+
+
+          </div>
+
+          <div className="dayFooter">
+
+            {props.day.hour.map((everyhour) => {
+              return (
+                <div className="hourBlock">
+                  <div className='temp'>{everyhour.temp_c}<p className="celsiumDay">&#176;</p></div>
+                  <div className='hourSymbol'><img alt="pic" src={everyhour.condition.icon} /></div>
+                  <div className='hourValue'>
+                    {Number(timeFormater(everyhour.time).hour).toString()}{Number(timeFormater(everyhour.time).hour).toString() <= 11 ? <spin> a.m.</spin> : <spin> p.m.</spin>}
+                  </div>
+                </div>
+              )
+            })}
+
+          </div>
         </div>
 
       </div>
@@ -100,4 +104,4 @@ function Day(props) {
   )
 }
 
-export default Day
+export default Day;

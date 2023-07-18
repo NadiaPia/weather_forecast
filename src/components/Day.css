@@ -7,12 +7,15 @@
 .dayComponent {
     /* background-color: aqua; */
     width: 90%;
-    background-color: rgba(224, 218, 164, 0.4);
+    
     color: white;
     margin-bottom: 5px;
     /* height: 50px */
     padding: 5px;
-    
+    background-color: rgba(224, 218, 164, 0.3);
+}
+.dayComponent:hover {
+    background-color: rgba(224, 218, 164, 0.4);
 }
 
 .dayHeader {
@@ -20,7 +23,10 @@
     display: flex;  
     justify-content: space-between;
     /* background-color: brown; */
+    /* background-color: rgba(224, 218, 164, 0);     */
 }
+
+
 
 .dayHeaderLeft {
     /* background-color: yellowgreen; */
@@ -50,9 +56,13 @@
     margin: 0;    
 }
 
+.hiddenPart {
+    display: none;
+}
+
 .dayBody {
     margin-top: 10px;
-    background-color: rgba(224, 218, 164, 0.6);
+    background-color: rgba(224, 218, 164, 0.3);
 }
 
 .humidity {
@@ -69,11 +79,57 @@
 .dayFooter {
     display: flex;
     margin-top: 20px;
+    padding-bottom: 10px;
+
     /* background-color: yellowgreen; */
-    color:black;
+    color:white;
     font-size: small;
+    min-width: 100%;
+    overflow-x: auto;    
+}
+
+.dayFooter::-webkit-scrollbar{
+    height: 6px;
+    /* width: 4px; */
+    /* background: gray; */
     
 }
+
+
+/* Track */
+.dayFooter::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 10px;
+}
+.dayFooter::-webkit-scrollbar-track:hover {
+    /* background: #555;  */
+    background-color: rgba(63, 63, 61, 0.4);
+
+}
+ 
+/* Handle */
+.dayFooter::-webkit-scrollbar-thumb {
+  background: transparent; 
+  
+}
+
+/* Handle on hover */
+.dayFooter::-webkit-scrollbar-thumb:horizontal:hover {
+  /* background: #555;  */
+  
+  
+}
+
+.dayFooter::-webkit-scrollbar-thumb:horizontal{
+    background: white;
+    border-radius: 10px;
+}
+
+
+/*for the media*/
+/* .dayFooter::-webkit-scrollbar {
+    display: none;
+  } */
 
 .temp {
     display: flex;
