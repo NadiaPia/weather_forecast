@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Today.css';
-import { timeFormater} from "../helpers/timeHelpers";
+import { timeFormater } from "../helpers/timeHelpers";
 import LineChart from './LineChart';
 
 function Today(props) {
@@ -9,7 +9,7 @@ function Today(props) {
     const [tempData, setTempData] = useState(null)
 
 
-    const { year, day, month, hour, min, dayOfWeek} = timeFormater(props.data.location.localtime) //setLocalTime(response.data.location.localtime); //Today, Tomorrow, 3 days
+    const { year, day, month, hour, min, dayOfWeek } = timeFormater(props.data.location.localtime) //setLocalTime(response.data.location.localtime); //Today, Tomorrow, 3 days
     //const dayOfWeek = findWeekDay(props.data.forecast.forecastday[0].date)
     const hourly = (props.data.forecast.forecastday[0].hour || []).map((hour, i) => {
         //console.log("hourly", i, timeFormater(hour.time).hour, hour.temp_c) //[0 '2023-07-07 00:00' 15.8,   1 '2023-07-07 01:00' 15.1 ...]
@@ -20,49 +20,41 @@ function Today(props) {
 
     });
 
-    
-
     //console.log("hourlyyy", hourly)// [{hour: '01', temp: 25.9}, {hour: '02', temp: 25.6}, ...]     
 
     useEffect(() => {
         setTempData({
-            labels: (hourly || []).map((data) => data.hour), //['00:00', '01:00','02:00','03:00'...]
+            labels: (hourly || []).map((data) => (Number(data.hour).toString())), //['00:00', '01:00','02:00','03:00'...]
             datasets: [{
-                label: "t",
-                data: (hourly || []).map((data) => data.temp),
-                backgroundColor: "yellow", //optinal
+                data: (hourly || []).map((data) => Math.round(data.temp)),
+                backgroundColor: "rgba(238, 252, 66, 0.85)", //optinal
                 borderColor: "black",
                 borderWidth: 1,
-                //hidden: true,
                 fill: 'origin',
+                pointBackgroundColor: "yellow",
+                pointRadius: 1,
+                tension: 0.4,
 
             }],
-            options: {
+            // options: {
 
-                scales: {
-                    x: {
+            //     scales: {
+            //         x: {
 
-                        ticks: {
-                            // For a category axis, the val is the index so the lookup via getLabelForValue is needed
-                            callback: function (val, index) {
-                                // Hide every 2nd tick label
-                                return index % 2 === 0 ? this.getLabelForValue(val) : '';
-                            },
+            //             ticks: {
+            //                 // For a category axis, the val is the index so the lookup via getLabelForValue is needed
+            //                 callback: function (val, index) {
+            //                     // Hide every 2nd tick label
+            //                     return index % 2 === 0 ? this.getLabelForValue(val) : '';
+            //                 },           //                
 
-                            color: 'Red', //doesn't work????
-
-                        }
-                    },
+            //             }
+            //         },
 
 
-                },
-
-                elements: {
-                    point: {
-                        pointStyle: "star",
-                    },
-                }
-            },
+            //     },
+            //     
+            // },
 
 
         })
@@ -89,11 +81,11 @@ function Today(props) {
                     <div className="precipitation" >{props.data.current.condition.text} </div>
                 </div>
 
-                
+                <div className="chartBox">
                     <div className='chartContainer'>
-                        {tempData && <LineChart chartData={tempData} />}
+                        {tempData && <LineChart chartData={tempData}/>}
                     </div>
-               
+                </div>
 
             </div>
 
