@@ -5,13 +5,19 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 
 const options = {
+  layout: {
+    padding: {
+      top: 20, //now numbers og temp are not cut off
+    }
+
+  },
   plugins: {
     // tooltip: {
           
     // },
     datalabels: {
       color: 'black',
-      align: 'top',      
+      align: 'top',         
       offset: 5,
       font: { size: 7, weight: 200 },
     },
@@ -28,6 +34,7 @@ const options = {
         display: true,
         z: 1, //visability of the grid lines
         
+        
           
       },
       ticks: {
@@ -39,7 +46,7 @@ const options = {
         
     },
     y: {
-      beginAtZero: true,
+      //beginAtZero: true,
       grid: {
         display: false,       
 

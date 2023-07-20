@@ -33,7 +33,7 @@ function Today(props) {
                 fill: 'origin',
                 pointBackgroundColor: "yellow",
                 pointRadius: 1,
-                tension: 0.4,
+                tension: 0.1,
 
             }],
             // options: {

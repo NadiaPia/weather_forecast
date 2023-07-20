@@ -24,13 +24,16 @@ function Tomorrow(props) {
 
     useEffect(() => {
         setTempData({
-            labels: (hourly || []).map((data) => data.hour), //['00:00', '01:00','02:00','03:00'...]
-            datasets: [{
-                label: "t",
-                data: (hourly || []).map((data) => data.temp),
-                backgroundColor: ["yellow"], //optinal
+            labels: (hourly || []).map((data) => (Number(data.hour).toString())), //['00:00', '01:00','02:00','03:00'...]
+            datasets: [{                
+                data: (hourly || []).map((data) => Math.round(data.temp)),
+                backgroundColor: "rgba(238, 252, 66, 0.85)", //optinal
                 borderColor: "black",
                 borderWidth: 1,
+                fill: 'origin',
+                pointBackgroundColor: "yellow",
+                pointRadius: 1,
+                tension: 0.1,
             }]
         })
 

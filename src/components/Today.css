@@ -66,16 +66,10 @@
 }
 
 .chartContainer {
-    background-color: rgba(224, 218, 164, 0.336);
-    margin-top: 10px;
-    width: 400px;
-    
-    
-    
+    background-color: rgba(224, 218, 164, 0.336);    
+    width: 400px;    
 }
 
 .chartBox {    
     overflow-x: auto;
-    
-
 }
