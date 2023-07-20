@@ -67,7 +67,7 @@
 
 .chartContainer {
     background-color: rgba(224, 218, 164, 0.336);    
-    width: 400px;    
+    /* width: 400px;     */
 }
 
 .chartBox {    

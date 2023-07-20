@@ -5,10 +5,11 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 
 const options = {
+  
   layout: {
     padding: {
       top: 20, //now numbers og temp are not cut off
-    }
+    },
 
   },
   plugins: {
@@ -20,12 +21,22 @@ const options = {
       align: 'top',         
       offset: 5,
       font: { size: 7, weight: 200 },
-    },
+      formatter: (value) => value + '°',
+    },    
     legend: { display: false }
 
   },
   scales: {
     x: {
+      title: {
+        display: true,
+        text: "hours",
+        color: "white",
+        font: {
+          size: 8,
+        }
+  
+      },
       
       border: {
         display: false
@@ -33,7 +44,7 @@ const options = {
       grid: {
         display: true,
         z: 1, //visability of the grid lines
-        
+        tickWidth: 1,       
         
           
       },
@@ -46,6 +57,7 @@ const options = {
         
     },
     y: {
+      
       //beginAtZero: true,
       grid: {
         display: false,       

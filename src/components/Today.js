@@ -26,7 +26,7 @@ function Today(props) {
         setTempData({
             labels: (hourly || []).map((data) => (Number(data.hour).toString())), //['00:00', '01:00','02:00','03:00'...]
             datasets: [{
-                data: (hourly || []).map((data) => Math.round(data.temp)),
+                data: (hourly || []).map((data) => Math.round(data.temp)),    
                 backgroundColor: "rgba(238, 252, 66, 0.85)", //optinal
                 borderColor: "black",
                 borderWidth: 1,
@@ -77,7 +77,7 @@ function Today(props) {
                     </div>
                 </div>
                 <div className="feelsAndprecip" >
-                    {props.data.current.feelslike_c && <div className="feelsLike"> Feels like {props.data.current.feelslike_c}&#8451;</div>}
+                    {props.data.current.feelslike_c && <div className="feelsLike"> Feels like {Math.round(props.data.current.feelslike_c)}&#8451;</div>}
                     <div className="precipitation" >{props.data.current.condition.text} </div>
                 </div>
 

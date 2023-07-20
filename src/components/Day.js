@@ -35,8 +35,8 @@ function Day(props) {
           <div className="dayHeaderRight">
             <div><img className="symbol" alt="pic" src={props.day.day.condition.icon} /></div>
             <div className="maxMinTemp">
-              <div className='temp'>{props.day.day.maxtemp_c}<p className="celsiumDay">&#176;</p></div>
-              <div className='temp'>{props.day.day.mintemp_c}<p className="celsiumDay">&#176;</p></div>
+              <div className='temp'>{Math.round(props.day.day.maxtemp_c)}<p className="celsiumDay">&#176;</p></div>
+              <div className='temp'>{Math.round(props.day.day.mintemp_c)}<p className="celsiumDay">&#176;</p></div>
             </div>
 
           </div>
@@ -82,10 +82,10 @@ function Day(props) {
             {props.day.hour.map((everyhour) => {
               return (
                 <div className="hourBlock">
-                  <div className='temp'>{everyhour.temp_c}<p className="celsiumDay">&#176;</p></div>
+                  <div className='temp'>{Math.round(everyhour.temp_c)}<p className="celsiumDay">&#176;</p></div>
                   <div className='hourSymbol'><img alt="pic" src={everyhour.condition.icon} /></div>
                   <div className='hourValue'>
-                    {Number(timeFormater(everyhour.time).hour).toString()}{Number(timeFormater(everyhour.time).hour).toString() <= 11 ? <spin> a.m.</spin> : <spin> p.m.</spin>}
+                    {Number(timeFormater(everyhour.time).hour).toString()}
                   </div>
                 </div>
               )
