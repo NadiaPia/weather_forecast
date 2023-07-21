@@ -5,18 +5,33 @@
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    height: 10%;
+    min-height: 3.5rem;
     align-items: center;
+    justify-content: space-between;
+    /* background-color: yellow; */
 }
+
+@media screen and (max-width: 1200px) {
+    .navbarContainer {
+        height: 3rem;
+  
+    }
+  }
 
 .menu {
     display: flex;
     justify-content: space-around;
-    color: white;
-    font-size: 17px;
-    padding-top: 10px;
+    align-items: center;
+    color: white;        
+    font-size: 2vw;
+    margin-top: 8px;
     width: 80%;
+    min-height: 50%;
+    /* background-color: chartreuse; */
 }
+
+
+
 .menu > div {
     border-bottom: 2px solid transparent;
     transition: all 0.25s;
@@ -34,12 +49,12 @@
 .searchContainer {
     display: flex;
     justify-content: center;    
-    width: 300px;
-    height: 42px;
+    width: 80%;    
     border: 1px solid #424242;
     border-radius: 5px;
     background-color: #FFF;
     padding: 2px 5px;
+    /* background-color: red; */
 }
 
 .search {
@@ -59,3 +74,15 @@
     cursor: pointer;
     color: brown;
 }
+
+@media screen and (min-width: 351px) and (max-width: 700px) {
+    .menu {
+        font-size: 4vw;
+    }
+  } 
+  @media screen and (max-width: 350px) {
+    .menu {
+        font-size: 6vw;       
+    }
+    
+  }

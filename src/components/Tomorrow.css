@@ -11,11 +11,10 @@
     padding-right: 5%;
     height: 40%;
     padding-left: 5%;
-    padding-right: 5%;
-    /* margin-left: 20px; */
-    color: white;
-    /* background-color: darkolivegreen; */
-    width: 100%;    
+    padding-right: 5%;    
+    color: white;   
+    width: 100%; 
+    overflow-x: auto;     
     
 }
 
@@ -43,9 +42,7 @@
 
 .tomorrowConditionIcon {
     width: 40%;
-    /* background-color: blueviolet; */
-
-      
+    /* background-color: blueviolet; */      
 }
 
 .tomorrowConditionText {
@@ -56,9 +53,14 @@
 
 }
 
-.tomorrowChartContainer {
-    background-color: rgba(224, 218, 164, 0.336);
-    margin-top: 10px;
+.tomorrowChartContainer {    
+    margin-top: 30px;
     margin-left: 5%;
     margin-right: 5%;
+    width: 400px;
+}
+
+.tomorrowChartBox {    
+    overflow-x: auto;
+    background-color: rgba(224, 218, 164, 0.336);
 }

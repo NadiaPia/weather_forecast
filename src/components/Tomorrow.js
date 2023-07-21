@@ -53,8 +53,10 @@ function Tomorrow(props) {
 
             </div>
 
+            <div className="tomorrowChartBox">
             <div className='tomorrowChartContainer'>
                 {tempData && <LineChart chartData={tempData} />}
+            </div>
             </div>
 
 

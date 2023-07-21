@@ -84,8 +84,9 @@ function Day(props) {
                 <div className="hourBlock">
                   <div className='temp'>{Math.round(everyhour.temp_c)}<p className="celsiumDay">&#176;</p></div>
                   <div className='hourSymbol'><img alt="pic" src={everyhour.condition.icon} /></div>
-                  <div className='hourValue'>
-                    {Number(timeFormater(everyhour.time).hour).toString()}
+                  <div className='hourValue'>                    
+                    {timeFormater(everyhour.time).hour}:00
+
                   </div>
                 </div>
               )

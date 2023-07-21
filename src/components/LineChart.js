@@ -12,15 +12,13 @@ const options = {
     },
 
   },
-  plugins: {
-    // tooltip: {
-          
-    // },
+  plugins: { // for the plugin's data use this link: https://chartjs-plugin-datalabels.netlify.app/
+    
     datalabels: {
       color: 'black',
       align: 'top',         
       offset: 5,
-      font: { size: 7, weight: 200 },
+      font: { size: 8.5, weight: 400 },
       formatter: (value) => value + '°',
     },    
     legend: { display: false }

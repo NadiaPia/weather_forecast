@@ -8,15 +8,12 @@
     flex-direction: column;
     height: 40%;
     padding-left: 5%;
-    padding-right: 5%;
-    /* margin-left: 20px; */
+    padding-right: 5%;    
     color: white;
     /* background-color: darkolivegreen; */
     width: 100%;
     justify-content: center;  
     overflow-x: auto;  
-    
-
 }
 
 
@@ -51,7 +48,7 @@
 .feelsAndprecip {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: small;
 }
 
@@ -66,10 +63,12 @@
 }
 
 .chartContainer {
-    background-color: rgba(224, 218, 164, 0.336);    
-    /* width: 400px;     */
+        
+    width: 400px;
+    margin-top: 30px
 }
 
 .chartBox {    
     overflow-x: auto;
+    background-color: rgba(224, 218, 164, 0.336);
 }
