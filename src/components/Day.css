@@ -52,9 +52,7 @@
 .dayBody {
     margin-top: 10px;
     background-color: rgba(224, 218, 164, 0.3);
-    /* background:radial-gradient( rgba(224, 218, 164, 0.8) , rgba(224, 218, 164, 0) ); */
-   
-    
+    /* background:radial-gradient( rgba(224, 218, 164, 0.8) , rgba(224, 218, 164, 0) ); */   
 }
 
 .humidity {

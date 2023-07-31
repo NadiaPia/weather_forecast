@@ -1,12 +1,13 @@
 .tomorrowContainer {    
     display: flex; 
-    flex-direction: column;
+    
    padding-top: 30px;
    /* background-color: aquamarine;    */
 }
 
 .tomorrowContent {
     display: flex; 
+    flex-direction: column;
     padding-left: 5%;
     padding-right: 5%;
     height: 40%;
@@ -14,35 +15,40 @@
     padding-right: 5%;    
     color: white;   
     width: 100%; 
-    overflow-x: auto;     
-    
+    overflow-x: auto;    
+}
+
+.tomorrowCondition {
+    display: flex; 
+    flex-direction: row;
 }
 
 .tomorrowDate {
     display: flex;
     flex-direction: column;    
-    /* background-color: red; */
+    /* background-color: red;  */
     width: 50%;
+    
     
 }
 .date {
-    /* background-color: aqua; */
+    /* background-color: aqua;  */
     display: flex;
     font-size: small;
     
 }
 
-.tomorrowCondition { 
+.iconContainer { 
     display: flex;  
     /* background-color: burlywood; */
-    justify-content: center;         
-    width: 50%;   
-
+    justify-content: flex-end;         
+    width: 50%;
 }
 
 .tomorrowConditionIcon {
     width: 40%;
-    /* background-color: blueviolet; */      
+    /* background-color: blueviolet;  */
+    
 }
 
 .tomorrowConditionText {
@@ -50,7 +56,13 @@
     display: flex; 
     justify-content: flex-start; 
     margin-top: 10px;
+    
+}
 
+.tomorrowChartBox {    
+    overflow-x: auto;
+    background-color: rgba(224, 218, 164, 0.336);
+    
 }
 
 .tomorrowChartContainer {    
@@ -58,9 +70,5 @@
     margin-left: 5%;
     margin-right: 5%;
     width: 400px;
-}
-
-.tomorrowChartBox {    
-    overflow-x: auto;
-    background-color: rgba(224, 218, 164, 0.336);
+    
 }

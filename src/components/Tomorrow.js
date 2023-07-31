@@ -25,7 +25,7 @@ function Tomorrow(props) {
     useEffect(() => {
         setTempData({
             labels: (hourly || []).map((data) => (Number(data.hour).toString())), //['00:00', '01:00','02:00','03:00'...]
-            datasets: [{                
+            datasets: [{
                 data: (hourly || []).map((data) => Math.round(data.temp)),
                 backgroundColor: "rgba(238, 252, 66, 0.85)", //optinal
                 borderColor: "black",
@@ -40,24 +40,28 @@ function Tomorrow(props) {
     }, [props.data.forecast.forecastday[1].hour])
     return (
         <div className="tomorrowContainer">
-            <div className="tomorrowContent"> 
-
-                <div className="tomorrowDate">
-                    {props.data.forecast.forecastday[1].date && <div className="date">{`${dayOfWeek}, ${month} ${day}`}</div>}
-                    <div className="tomorrowConditionText">{props.data.forecast.forecastday[1].day.condition.text}</div>
-                </div>
+            <div className="tomorrowContent">
 
                 <div className="tomorrowCondition">
-                    <img className="tomorrowConditionIcon" alt="pic" src={props.data.forecast.forecastday[1].day.condition.icon} />
+
+                    <div className="tomorrowDate">
+                        {props.data.forecast.forecastday[1].date && <div className="date">{`${dayOfWeek}, ${month} ${day}`}</div>}
+                        <div className="tomorrowConditionText">{props.data.forecast.forecastday[1].day.condition.text}</div>
+                    </div>
+
+                    <div className="iconContainer">
+                        <img className="tomorrowConditionIcon" alt="pic" src={props.data.forecast.forecastday[1].day.condition.icon} />
+                    </div>
+
                 </div>
 
+                <div className="tomorrowChartBox">
+                    <div className='tomorrowChartContainer'>
+                        {tempData && <LineChart chartData={tempData} />}
+                    </div>
+                </div>
             </div>
 
-            <div className="tomorrowChartBox">
-            <div className='tomorrowChartContainer'>
-                {tempData && <LineChart chartData={tempData} />}
-            </div>
-            </div>
 
 
         </div>

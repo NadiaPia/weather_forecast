@@ -16,19 +16,15 @@
     overflow-x: auto;  
 }
 
-
 .currentTemp {    
     display: flex;
-    justify-content: space-between;
-   
-    width: 100%;
-   
+    justify-content: space-between;   
+    width: 100%;   
 }
 
 .tempValue {
     font-size: 50px;    
     display: flex;
-
 }
 
 .celsium {    
@@ -62,13 +58,16 @@
     font-size: small;
 }
 
-.chartContainer {
-        
+.chartContainer {        
     width: 400px;
     margin-top: 30px
 }
+
+
 
 .chartBox {    
     overflow-x: auto;
     background-color: rgba(224, 218, 164, 0.336);
 }
+
+
