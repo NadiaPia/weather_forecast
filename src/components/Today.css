@@ -10,10 +10,10 @@
     padding-left: 5%;
     padding-right: 5%;    
     color: white;
-    /* background-color: darkolivegreen; */
     width: 100%;
     justify-content: center;  
     overflow-x: auto;  
+    padding-bottom: 1em;
 }
 
 .currentTemp {    
@@ -36,8 +36,7 @@
 .symbol {    
     width: 50%;
 }
-.symbolContainer {
-    
+.symbolContainer {    
     width: 30%;
 }
 
@@ -63,11 +62,81 @@
     margin-top: 30px
 }
 
-
-
 .chartBox {    
     overflow-x: auto;
     background-color: rgba(224, 218, 164, 0.336);
+}
+
+.detailsTitle {
+    display: flex;
+    font-weight: bold;
+    font-size: small;
+}
+
+.todayDetails {
+    display: flex;
+    background-color: rgba(224, 218, 164, 0.336);
+    padding: 2px;   
+}
+
+.detailsParameters {
+    margin-right: 5em;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.detailsParameters div > p{
+    margin: 0 0 0.4em 0;
+    padding: 0;
+}
+
+.detailsValues {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: small;
+}
+
+.detailsValues > div {
+    margin-bottom: 0.4em;
+}
+
+.astroTitle {
+    display: flex;
+    font-weight: bold;
+    font-size: small;
+}
+
+.astroDetails {
+    display: flex;
+    background-color: rgba(224, 218, 164, 0.336);
+    padding: 2px;   
+}
+
+.astroParameters {   
+    margin-right: 5em;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.astroParameters div > p{
+    margin: 0 0 0.4em 0;
+    padding: 0;
+}
+
+.astroValues {   
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: small;
+}
+
+.astroValues > div {
+    margin-bottom: 0.4em;
 }
 
 

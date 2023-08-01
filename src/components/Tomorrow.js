@@ -60,6 +60,84 @@ function Tomorrow(props) {
                         {tempData && <LineChart chartData={tempData} />}
                     </div>
                 </div>
+
+                <div className='tomorrowDetailsContainer'>
+
+                    <div className='tomorrowDetailsTitle'>
+                        <p>Details</p>
+                    </div>
+
+                    <div className='tomorrowDetails'>
+
+                        <div className="tomorrowDetailsParameters">
+                            <div className='tomorrowDetailsHumidity'>
+                                <p>Average Humidity</p>
+                            </div>
+                           
+                            <div className='tomorrowDetailsUV'>
+                                <p>UVindex</p>
+                            </div>
+                            <div className='tomorrowDetailsVisibility'>
+                                <p>Average Visibility</p>
+                            </div>
+                            <div className='tomorrowDetailsWind'>
+                                <p>Max Wind</p>
+                            </div>
+                        </div>
+
+                        <div className="tomorrowDetailsValues">
+                            <div >
+                                {props.data.forecast.forecastday[1].day.avghumidity}%
+                            </div>
+                            
+                            <div >
+                                {props.data.forecast.forecastday[1].day.uv}
+                            </div>
+                            <div >
+                                {props.data.forecast.forecastday[1].day.avgvis_km} km
+                            </div>
+                            <div >
+                                {props.data.forecast.forecastday[1].day.maxwind_kph} km/h
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div className="tomorrowAstroContainer">
+
+                        <div className='tomorrowAstroTitle'>
+                            <p>Sunrise / Sunset</p>
+                        </div>
+
+                        <div className="tomorrowAstroDetails">
+                            <div className="tomorrowAstroParameters">
+
+                                <div className='tomorrowAstroSunrise'>
+                                    <p>Sunrise</p>
+                                </div>
+                                <div className='tomorrowAstroSunset'>
+                                    <p>Sunset</p>
+                                </div>
+
+                            </div>
+
+                            <div className='tomorrowAstroValues'>
+                                <div>
+                                    {props.data.forecast.forecastday[1].astro.sunrise}
+                                </div>
+                                <div>
+                                    {props.data.forecast.forecastday[1].astro.sunset}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
 

@@ -26,7 +26,7 @@ function Today(props) {
         setTempData({
             labels: (hourly || []).map((data) => (Number(data.hour).toString())), //['00:00', '01:00','02:00','03:00'...]
             datasets: [{
-                data: (hourly || []).map((data) => Math.round(data.temp)),    
+                data: (hourly || []).map((data) => Math.round(data.temp)),
                 backgroundColor: "rgba(238, 252, 66, 0.85)", //optinal
                 borderColor: "black",
                 borderWidth: 1,
@@ -83,7 +83,85 @@ function Today(props) {
 
                 <div className="chartBox">
                     <div className='chartContainer'>
-                        {tempData && <LineChart chartData={tempData}/>}
+                        {tempData && <LineChart chartData={tempData} />}
+                    </div>
+                </div>
+
+
+                <div className='todayDetailsContainer'>
+
+                    <div className='detailsTitle'>
+                        <p>Current details</p>
+                    </div>
+
+                    <div className='todayDetails'>
+
+                        <div className="detailsParameters">
+                            <div className='detailsHumidity'>
+                                <p>Humidity</p>
+                            </div>
+                            <div className='detailsPressure'>
+                                <p>Pressure</p>
+                            </div>
+                            <div className='detailsUV'>
+                                <p>UVindex</p>
+                            </div>
+                            <div className='detailsVisibility'>
+                                <p>Visibility</p>
+                            </div>
+                            <div className='detailsWind'>
+                                <p>Wind</p>
+                            </div>
+                        </div>
+
+                        <div className="detailsValues">
+                            <div >
+                                {props.data.current.humidity}%
+                            </div>
+                            <div >
+                                {(props.data.current.pressure_mb) / 1000} mBar
+                            </div>
+                            <div >
+                                {props.data.current.uv}
+                            </div>
+                            <div >
+                                {props.data.current.vis_km} km
+                            </div>
+                            <div >
+                                {props.data.current.wind_kph} km/h
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className="astroContainer">
+
+                        <div className='astroTitle'>
+                            <p>Sunrise / Sunset</p>
+                        </div>
+
+                        <div className="astroDetails">
+                            <div className="astroParameters">
+
+                                <div className='astroSunrise'>
+                                    <p>Sunrise</p>
+                                </div>
+                                <div className='astroSunset'>
+                                    <p>Sunset</p>
+                                </div>
+
+                            </div>
+
+                            <div className='astroValues'>
+                                <div>
+                                    {props.data.forecast.forecastday[0].astro.sunrise}
+                                </div>
+                                <div>
+                                    {props.data.forecast.forecastday[0].astro.sunset}
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

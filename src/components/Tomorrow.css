@@ -1,74 +1,132 @@
-.tomorrowContainer {    
-    display: flex; 
-    
-   padding-top: 30px;
-   /* background-color: aquamarine;    */
+.tomorrowContainer {
+    display: flex;
+    padding-top: 30px;
 }
 
 .tomorrowContent {
-    display: flex; 
+    display: flex;
     flex-direction: column;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-bottom: 1em;
     height: 40%;
     padding-left: 5%;
-    padding-right: 5%;    
-    color: white;   
-    width: 100%; 
-    overflow-x: auto;    
+    padding-right: 5%;
+    color: white;
+    width: 100%;
+    overflow-x: auto;
 }
 
 .tomorrowCondition {
-    display: flex; 
+    display: flex;
     flex-direction: row;
 }
 
 .tomorrowDate {
     display: flex;
     flex-direction: column;    
-    /* background-color: red;  */
     width: 50%;
-    
-    
-}
-.date {
-    /* background-color: aqua;  */
-    display: flex;
-    font-size: small;
-    
 }
 
-.iconContainer { 
-    display: flex;  
-    /* background-color: burlywood; */
-    justify-content: flex-end;         
+.date {    
+    display: flex;
+    font-size: small;
+}
+
+.iconContainer {
+    display: flex;    
+    justify-content: flex-end;
     width: 50%;
 }
 
 .tomorrowConditionIcon {
     width: 40%;
-    /* background-color: blueviolet;  */
-    
 }
 
-.tomorrowConditionText {
-    /* background-color: chartreuse;     */
-    display: flex; 
-    justify-content: flex-start; 
+.tomorrowConditionText {   
+    display: flex;
+    justify-content: flex-start;
     margin-top: 10px;
-    
 }
 
-.tomorrowChartBox {    
+.tomorrowChartBox {
     overflow-x: auto;
     background-color: rgba(224, 218, 164, 0.336);
-    
 }
 
-.tomorrowChartContainer {    
+.tomorrowChartContainer {
     margin-top: 30px;
     margin-left: 5%;
     margin-right: 5%;
     width: 400px;
-    
+}
+
+.tomorrowDetailsTitle {
+    display: flex;
+    font-weight: bold;
+    font-size: small;
+}
+
+.tomorrowDetails {
+    display: flex;
+    background-color: rgba(224, 218, 164, 0.336);
+    padding: 2px;
+}
+
+.tomorrowDetailsParameters {    
+    margin-right: 5em;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.tomorrowDetailsParameters div>p {
+    margin: 0 0 0.4em 0;
+    padding: 0;
+}
+
+.tomorrowDetailsValues {   
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: small;
+}
+
+.tomorrowDetailsValues>div {
+    margin-bottom: 0.4em;
+}
+
+.tomorrowAstroTitle {
+    display: flex;
+    font-weight: bold;
+    font-size: small;
+}
+
+.tomorrowAstroDetails {
+    display: flex;
+    background-color: rgba(224, 218, 164, 0.336);
+    padding: 2px;
+}
+
+.tomorrowAstroParameters {
+    margin-right: 5em;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.tomorrowAstroParameters div>p {
+    margin: 0 0 0.4em 0;
+    padding: 0;
+}
+
+.tomorrowAstroValues {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    font-size: small;
+}
+
+.tomorrowAstroValues>div {
+    margin-bottom: 0.4em;
 }
