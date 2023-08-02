@@ -88,9 +88,44 @@
   }
 
   .dropdownContainer {
-    background-color: aqua;
+    /* background-color: aqua; */
+    position: relative;
+    width: 90%;    
+    /* padding: 0 2px;    */   
+
+  }
+
+  .dropdownContainerHidden {
+    display: none;
   }
 
   .dropdownCities {
     display: flex;
+    flex-direction: column;
+    /* background-color: chartreuse; */
+    background-color: rgb(54, 54, 53);
+    position: absolute;
+    width: 100%;
+    align-items: start;
+    
+   
+    /* padding-bottom: 0.4em;     */
+  }
+
+  .dropdownCity {
+    display: flex;
+    padding-top: 0.4em;   
+    /* border-bottom: 1px solid white; */
+    width: 100%;
+    justify-content: flex-start;
+    padding-bottom: 0.4em;       
+    color: white;
+    
+  }
+
+  .dropdownCity:hover {
+    /* background-color: rgb(209, 209, 6); */
+    background-color:rgba(238, 252, 66, 0.85);
+    color: black;
+    cursor: pointer;
   }

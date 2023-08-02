@@ -13,8 +13,13 @@ function App() {
   const [data, setData] = useState(null);
   const [currentComponent, setCurrentComponent] = useState('Today');
   const [location, setLocation] = useState('');
+  const [hide, setHide] = useState(false);
+
+
   
   const getWeather = () => {
+
+    setHide(true);
 
     axios.get(`http://api.weatherapi.com/v1/forecast.json?key=d27e5f3580d34ff991c55923232906&q=${location}&days=3&aqi=yes&alerts=no`)
       .then((response) => {
@@ -36,6 +41,7 @@ function App() {
           location={location}
           setCurrentComponent={setCurrentComponent}
           getWeather={getWeather}
+          hide={hide}
         />
 
         {currentComponent === "Today" && data && <Today data={data} />}

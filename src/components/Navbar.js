@@ -8,6 +8,13 @@ import axios from 'axios';
 function Navbar(props) {
 
     const [cities, setCities] = useState([]);
+
+    const countryShorts = {
+        "United Arab Emirates": "UAE",
+        "United Kingdom": "UK",
+        "United States of America": "USA",
+        "Соединенные Штаты Америки": "США",
+    }
     const searchCity = (city) => {
         
         props.setLocation(city);
@@ -37,13 +44,18 @@ function Navbar(props) {
 
             </div>
 
-            <div className="dropdownContainer">{cities.map((el) => {
+            <div className={props.hide? "dropdownContainerHidden" : "dropdownContainer"}>
+                <div className="dropdownCities">
+                {cities.map((el, key) => {
+                    const country = countryShorts[el.country]? countryShorts[el.country] : el.country;                    
+                    // const country = countryShorts[el.country] || el.country;        //the same but short         
+
                 return(
-                    <div className="dropdownCities">
-                        <div>{`${el.name}, ${el.region}, ${el.country}`}</div>                        
-                    </div>
-                )
-            })} </div>
+                         <div className="dropdownCity" key={`search-city-${key}`}>{`${el.name}, ${el.region}, ${country}`}</div>
+                       
+                        )
+                    })} </div>
+                </div>
 
             <div className="menu">
                 <div onClick={() => props.setCurrentComponent("Today")}> Today </div>
