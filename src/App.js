@@ -21,11 +21,7 @@ function App() {
         console.log("response.dataaaaaaaaaaa", response.data);
 
         setData(response.data);
-        setLocation(response.data.location.name);
         
-        //setHourlyForecast(response.data.forecast.forecastday[0].hour)
-        //setTomorowTime(response.data.forecast.forecastday[1].date)
-       
       }).catch((error) => {
         console.log("errorrrr", error);
       });

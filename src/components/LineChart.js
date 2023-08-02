@@ -8,7 +8,7 @@ const options = {
   
   layout: {
     padding: {
-      top: 20, //now numbers og temp are not cut off
+      top: 20, //now numbers of temp are not cut off
     },
 
   },
@@ -24,6 +24,8 @@ const options = {
     legend: { display: false }
 
   },
+
+  aspectRatio: 10/2, /*1200width * 120 height*/ /*aspectRatio: weregular th height*/
   scales: {
     x: {
       title: {
@@ -32,8 +34,7 @@ const options = {
         color: "white",
         font: {
           size: 8,
-        }
-  
+        }  
       },
       
       border: {
@@ -42,10 +43,9 @@ const options = {
       grid: {
         display: true,
         z: 1, //visability of the grid lines
-        tickWidth: 1,       
-        
-          
+        tickWidth: 1,         
       },
+
       ticks: {
        color: "white",
        font: {
@@ -56,7 +56,7 @@ const options = {
     },
     y: {
       
-      //beginAtZero: true,
+      beginAtZero: true,
       grid: {
         display: false,       
 

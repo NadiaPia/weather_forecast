@@ -86,3 +86,11 @@
     }
     
   }
+
+  .dropdownContainer {
+    background-color: aqua;
+  }
+
+  .dropdownCities {
+    display: flex;
+  }
