@@ -1,6 +1,6 @@
 import './App.css';
 import axios from 'axios';
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import Navbar from './components/Navbar';
 import Today from './components/Today';
 import Tomorrow from './components/Tomorrow';
@@ -12,7 +12,7 @@ function App() {
 
   const [data, setData] = useState(null);
   const [currentComponent, setCurrentComponent] = useState('Today');
-  const [location, setLocation] = useState('');
+  const [location, setLocation] = useState({ name: "", region: "", country: "" });
   const [hide, setHide] = useState(false);
 
 
@@ -21,7 +21,7 @@ function App() {
 
     setHide(true);
 
-    axios.get(`http://api.weatherapi.com/v1/forecast.json?key=d27e5f3580d34ff991c55923232906&q=${location}&days=3&aqi=yes&alerts=no`)
+    axios.get(`http://api.weatherapi.com/v1/forecast.json?key=d27e5f3580d34ff991c55923232906&q=${location.name}&q=${location.region}&q=${location.country}&days=3&aqi=yes&alerts=no`)
       .then((response) => {
         console.log("response.dataaaaaaaaaaa", response.data);
 
@@ -31,6 +31,11 @@ function App() {
         console.log("errorrrr", error);
       });
   };
+
+  useEffect(() => {
+    if(!location.country) return;
+    getWeather()
+  }, [location.country])
 
   return (
 
@@ -42,7 +47,9 @@ function App() {
           setCurrentComponent={setCurrentComponent}
           getWeather={getWeather}
           hide={hide}
+          setHide={setHide}
           setData={setData}
+          data={data}
         />
 
         {currentComponent === "Today" && data && <Today data={data} />}
