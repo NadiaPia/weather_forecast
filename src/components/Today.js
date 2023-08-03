@@ -52,8 +52,7 @@ function Today(props) {
                 </div>
 
                 <div className="currentTemp">
-                    <span className="tempValue">{props.data.current.temp_c} {props.data.current.temp_c && <p className="celsium">&#8451;</p>}</span>
-
+                    <span className="tempValue">{props.data.current.temp_c}{(props.data.current.temp_c).toString() && <p className="celsium">&#8451;</p>}</span> {/*.toString() because temp=0 would be considered as false */}
                     <div className="symbolContainer">
                         {props.data.current.condition.text && <img className="symbol" alt="pic" src={props.data.current.condition.icon} />}
                     </div>

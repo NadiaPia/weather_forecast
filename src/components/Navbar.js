@@ -35,7 +35,6 @@ function Navbar(props) {
                     setCities(response.data)
                 }
             });
-        //props.setLocation(city);
     }
 
     const selectCity = (el) => {
@@ -47,8 +46,6 @@ function Navbar(props) {
         }));
 
         setInputCity(`${el.name}, ${el.region}, ${country}`);
-        //console.log("el.region", el.region);
-
     }
 
     const clearSearchBar = () => {
@@ -57,9 +54,11 @@ function Navbar(props) {
         setCities([]);
         props.setHide(false);
     }
+
     return (
         <div className='navbarContainer'>
             <div className="searchContainer" >
+            <div className="searchIcon" ><MagnifyingGlass /></div>
                 <input
                     id="input"
                     className="search"
@@ -68,12 +67,12 @@ function Navbar(props) {
                     onClick={clearSearchBar}
                     value={inputCity}
                     onChange={(event) => searchCity(event.target.value)}
-                    onKeyDown={(event) => {
+                    /*onKeyDown={(event) => {
                         event.key === "Enter" && searchWeather();
 
-                    }}
+                    }}*/
                 />
-                <div onClick={searchWeather} className="searchIcon" ><MagnifyingGlass /></div>
+                
 
             </div>
 
