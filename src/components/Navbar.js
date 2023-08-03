@@ -9,6 +9,12 @@ function Navbar(props) {
 
     const [cities, setCities] = useState([]);
 
+    const searchWeather = () => {
+        props.getWeather();
+        document.getElementById("input").blur(); //unfocus the input after enter or clicking of the MagnifyingGlass
+
+    }
+
     const countryShorts = {
         "United Arab Emirates": "UAE",
         "United Kingdom": "UK",
@@ -29,18 +35,21 @@ function Navbar(props) {
     }
     return (
         <div className='navbarContainer'>
-            <div className="searchContainer">
+            <div className="searchContainer" >
                 <input
+                id="input"
                 className="search"
                     type="text"                    
-                    placeholder='City...'
+                    placeholder='City...'  
+                    onClick={() => props.setData(null)}                  
                     // value={props.location}     
                     onChange={(event) => searchCity(event.target.value)}
                     onKeyDown={(event) => {
-                        event.key === "Enter" && props.getWeather();
+                        event.key === "Enter" && searchWeather();
+                       
                     }}
                 />
-                <div onClick={props.getWeather} className="searchIcon" ><MagnifyingGlass /></div>
+                <div onClick={searchWeather} className="searchIcon" ><MagnifyingGlass /></div>
 
             </div>
 

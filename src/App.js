@@ -42,6 +42,7 @@ function App() {
           setCurrentComponent={setCurrentComponent}
           getWeather={getWeather}
           hide={hide}
+          setData={setData}
         />
 
         {currentComponent === "Today" && data && <Today data={data} />}
