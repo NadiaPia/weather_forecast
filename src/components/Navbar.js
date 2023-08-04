@@ -10,6 +10,8 @@ function Navbar(props) {
     const [cities, setCities] = useState([]);
     //const [inputValue, setInputValue] = useState("");
     const [inputCity, setInputCity] = useState("");
+    const [active, setActive] = useState(false);
+
 
 
     const searchWeather = () => {
@@ -96,9 +98,9 @@ function Navbar(props) {
             </div>
 
             <div className="menu">
-                <div onClick={() => props.setCurrentComponent("Today")}> Today </div>
-                <div onClick={() => props.setCurrentComponent("Tomorrow")}> Tomorrow </div>
-                <div onClick={() => props.setCurrentComponent("3 Days")}> 3 Days </div>
+                <div className={props.currentComponent === "Today"? "activeDay": ""} onClick={() => {props.setCurrentComponent("Today"); }}> Today </div>
+                <div className={props.currentComponent === "Tomorrow"? "activeDay": ""} onClick={() => props.setCurrentComponent("Tomorrow")}> Tomorrow </div>
+                <div className={props.currentComponent === "3 Days"? "activeDay": ""} onClick={() => props.setCurrentComponent("3 Days")}> 3 Days </div>
             </div>
 
         </div>

@@ -50,6 +50,7 @@ function App() {
           setHide={setHide}
           setData={setData}
           data={data}
+          currentComponent={currentComponent}
         />
 
         {currentComponent === "Today" && data && <Today data={data} />}

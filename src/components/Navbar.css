@@ -33,7 +33,7 @@
 
 
 .menu > div {
-    border-bottom: 2px solid transparent;
+    /* border-bottom: 2px solid transparent; */
     transition: all 0.25s;
 }
 .menu>div:hover {
@@ -41,9 +41,11 @@
     /* transition: 0.4s;  */
     /* border-bottom: 1px solid brown; */
     border-bottom: 1.5px solid white;
-   
-
     cursor: pointer;
+}
+
+.activeDay {
+    border-bottom: 1.5px solid white;
 }
 
 .searchContainer {
