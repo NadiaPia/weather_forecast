@@ -18,7 +18,7 @@ const options = {
       color: 'black',
       align: 'top',         
       offset: 5,
-      font: { size: 8.5, weight: 400 },
+      font: { size: 10, weight: 400 },
       formatter: (value) => value + '°',
     },    
     legend: { display: false }
@@ -33,7 +33,7 @@ const options = {
         text: "hours",
         color: "white",
         font: {
-          size: 8,
+          size: 12,
         }  
       },
       
@@ -49,7 +49,7 @@ const options = {
       ticks: {
        color: "white",
        font: {
-        size: 8,        
+        size: 10,        
        },       
       } 
         

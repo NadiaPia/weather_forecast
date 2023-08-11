@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { MagnifyingGlass } from "phosphor-react";
 import axios from 'axios';
+import Pin from '../assets/pinMap.png';
+import secrets from '../secrets.json'
+
 
 
 
@@ -10,14 +13,11 @@ function Navbar(props) {
     const [cities, setCities] = useState([]);
     //const [inputValue, setInputValue] = useState("");
     const [inputCity, setInputCity] = useState("");
-    const [active, setActive] = useState(false);
 
-
-
-    const searchWeather = () => {
-        props.getWeather();
-        document.getElementById("input").blur(); //unfocus the input after enter or clicking of the MagnifyingGlass
-    }
+    // const searchWeather = () => {
+    //     props.getWeather();
+    //     document.getElementById("input").blur(); //unfocus the input after enter or clicking of the MagnifyingGlass
+    // }
 
     const countryShorts = {
         "United Arab Emirates": "UAE",
@@ -30,7 +30,7 @@ function Navbar(props) {
 
         //props.setLocation(city);
         if (!city) return;
-        axios.get(`http://api.weatherapi.com/v1/search.json?key=d27e5f3580d34ff991c55923232906&q=${city}`)
+        axios.get(`http://api.weatherapi.com/v1/search.json?key=${secrets.SECRET_KEY}&q=${city}`)
             .then((response) => {
                 console.log("response about the city", response.data);
                 if (response.data.length > 0) {
@@ -73,8 +73,7 @@ function Navbar(props) {
                         event.key === "Enter" && searchWeather();
 
                     }}*/
-                />
-                
+                />                
 
             </div>
 
@@ -90,18 +89,18 @@ function Navbar(props) {
                                 onClick={() => selectCity(el)
                                 }
                                 key={`search-city-${key}`}>
-                                {`${el.name}, ${el.region}, ${country}`}
+                               <img alt="pic" src={Pin} className="pinSymbol" /> {`${el.name}, ${el.region}, ${country}`}
                             </div>
 
                         )
                     })} </div>
             </div>
 
-            <div className="menu">
+            {props.data && <div className="menu">
                 <div className={props.currentComponent === "Today"? "activeDay": ""} onClick={() => {props.setCurrentComponent("Today"); }}> Today </div>
                 <div className={props.currentComponent === "Tomorrow"? "activeDay": ""} onClick={() => props.setCurrentComponent("Tomorrow")}> Tomorrow </div>
                 <div className={props.currentComponent === "3 Days"? "activeDay": ""} onClick={() => props.setCurrentComponent("3 Days")}> 3 Days </div>
-            </div>
+            </div>}
 
         </div>
     )

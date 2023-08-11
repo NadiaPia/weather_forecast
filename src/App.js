@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Today from './components/Today';
 import Tomorrow from './components/Tomorrow';
 import NDays from './components/NDays';
+import secrets from './secrets.json'
 
 
 
@@ -14,14 +15,12 @@ function App() {
   const [currentComponent, setCurrentComponent] = useState('Today');
   const [location, setLocation] = useState({ name: "", region: "", country: "" });
   const [hide, setHide] = useState(false);
-
-
   
   const getWeather = () => {
 
     setHide(true);
 
-    axios.get(`http://api.weatherapi.com/v1/forecast.json?key=d27e5f3580d34ff991c55923232906&q=${location.name}&q=${location.region}&q=${location.country}&days=3&aqi=yes&alerts=no`)
+    axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${secrets.SECRET_KEY}&q=${location.name}&q=${location.region}&q=${location.country}&days=3&aqi=yes&alerts=no`)
       .then((response) => {
         console.log("response.dataaaaaaaaaaa", response.data);
 
@@ -57,7 +56,7 @@ function App() {
 
         {currentComponent === "Tomorrow" && data && <Tomorrow data={data} />}
 
-        {currentComponent === "3 Days" && <NDays data={data} />}
+        {currentComponent === "3 Days" && data && <NDays data={data} />}
       </div>
     </div>
   );

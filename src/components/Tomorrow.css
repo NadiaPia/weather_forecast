@@ -52,6 +52,34 @@
     background-color: rgba(224, 218, 164, 0.336);
 }
 
+.tomorrowChartBox::-webkit-scrollbar{
+    height: 6px;
+    /* width: 4px; */
+    /* background: gray; */
+    
+}
+
+/* Track */
+.tomorrowChartBox::-webkit-scrollbar-track {
+    background: transparent; 
+    border-radius: 10px;
+}
+.tomorrowChartBox::-webkit-scrollbar-track:hover {
+    /* background: #555;  */
+    background-color: rgba(63, 63, 61, 0.4);
+
+}
+ 
+/* Handle */
+.tomorrowChartBox::-webkit-scrollbar-thumb {
+  background: transparent;   
+}
+
+.tomorrowChartBox::-webkit-scrollbar-thumb:horizontal{
+    background: white;
+    border-radius: 10px;
+}
+
 .tomorrowChartContainer {
     margin-top: 30px;
     margin-left: 5%;

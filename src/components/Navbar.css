@@ -5,18 +5,17 @@
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 10px;
-    min-height: 3.5rem;
+    /* min-height: 3.5rem; */
     align-items: center;
     justify-content: space-between;
     /* background-color: yellow; */
 }
 
-@media screen and (max-width: 1200px) {
+/* @media screen and (max-width: 1200px) {
     .navbarContainer {
-        height: 3rem;
-  
+        height: 3rem;  
     }
-  }
+  } */
 
 .menu {
     display: flex;
@@ -56,17 +55,18 @@
     border-radius: 5px;
     background-color: #FFF;
     padding: 2px 5px;
+    /* background-color: red; */
+    height: 1.8em;
 }
 
 .search {
     border: none;
-    width: 100%;
-    height: 100%;
+    width: 100%;   
     padding: 0px 5px;
     font-size: 15px;
     color: #424242;
-    padding-left: 0.4em;
-    
+    padding-left: 0.4em;    
+    /* background-color: aqua; */
 }
 
 .search:focus {
@@ -76,7 +76,8 @@
 .searchIcon {
     color: rgb(207, 205, 205);
     font-weight: bold;
-    margin-top: 0.2em;
+    margin-top: 0.4em;
+    /* background-color: red; */
 }
 .searchIconHidden {
     display: none;
@@ -95,50 +96,55 @@
   @media screen and (max-width: 350px) {
     .menu {
         font-size: 6vw;       
-    }
-    
+    }    
   }
 
   .dropdownContainer {
-    /* background-color: aqua; */
     position: relative;
     width: 90%;    
-    /* padding: 0 2px;    */   
-
+    /* padding: 0 2px;    */  
+    background-color: aquamarine;
+    
   }
-
   .dropdownContainerHidden {
     display: none;
   }
-
   .dropdownCities {
     display: flex;
     flex-direction: column;
-    /* background-color: chartreuse; */
     background-color: rgb(54, 54, 53);
     position: absolute;
     width: 100%;
     align-items: start;
-    
-   
-    /* padding-bottom: 0.4em;     */
-  }
+}
 
   .dropdownCity {
     display: flex;
     text-align: left;
-    padding-top: 0.4em;   
+    padding-top: 1em;   
     /* border-bottom: 1px solid white; */
     width: 100%;
     justify-content: flex-start;
     padding-bottom: 0.4em;       
-    color: white;
-    
+    color: white;    
   }
 
+  .pinSymbol {
+    width: 1.1em;
+    height: 1.2em;    
+    margin-right: 0.4em;
+    margin-left: 0.3em;
+    font-weight: bold;
+    filter: invert(98%) sepia(2%) saturate(584%) hue-rotate(70deg) brightness(111%) contrast(82%);
+  }
+
+  
   .dropdownCity:hover {
     /* background-color: rgb(209, 209, 6); */
     background-color:rgba(238, 252, 66, 0.85);
     color: black;
     cursor: pointer;
+  }
+  .dropdownCity:hover > img {
+    filter: none;
   }
