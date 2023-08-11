@@ -2,13 +2,9 @@ import React, {useState} from 'react';
 import './Day.css';
 import { timeFormater } from "../helpers/timeHelpers";
 
-
-
-
 function Day(props) {
   console.log("props.day", props.day);
   const[hidden, setHidden] = useState(true);
-
   const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]; 
 
   let date = new Date(props.day.date);
@@ -16,8 +12,6 @@ function Day(props) {
   date.setHours(date.getHours() + (offset / 60)) //shift hours of the date to differance with UTC
   const weekdayIndex = date.getDay();
   const dayOfWeek = weekday[weekdayIndex];
-
-
 
   const { year, day, month, hour, min } = timeFormater(props.day.date);
   
@@ -28,7 +22,6 @@ function Day(props) {
         <div className="dayHeader" onClick={() => setHidden(prev => !prev)}>
           <div className="dayHeaderLeft">
             <div className="monthDay">{`${dayOfWeek}, ${month} ${day}`}</div>
-
             <div >{props.day.day.condition.text}</div>
           </div>
 
@@ -42,7 +35,6 @@ function Day(props) {
           </div>
         </div>
 
-
         <div className={hidden? "hiddenPart": ""}>
           <div className="dayBody">
 
@@ -54,7 +46,6 @@ function Day(props) {
                 {`${props.day.day.maxwind_kph} km/h`}
               </div>
             </div>
-
 
             <div className="humidity">
               <div className="humidityLabel">
@@ -73,7 +64,6 @@ function Day(props) {
                 {`${props.day.astro.sunrise} / ${props.day.astro.sunset}`}
               </div>
             </div>
-
 
           </div>
 

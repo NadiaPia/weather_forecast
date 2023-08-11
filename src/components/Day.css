@@ -1,7 +1,6 @@
 .dayContainer {    
     display: flex;
-    justify-content: center;
-    /* background-color: yellowgreen; */    
+    justify-content: center;  
 }
 
 .dayComponent {   
@@ -11,6 +10,7 @@
     padding: 5px;
     background-color: rgba(224, 218, 164, 0.3);
 }
+
 .dayComponent:hover {
     background-color: rgba(224, 218, 164, 0.4);
 }
@@ -19,6 +19,7 @@
     display: flex;  
     justify-content: space-between;    
 }
+
 .dayHeaderLeft {    
     font-size: small;
     width: 50%;
@@ -51,8 +52,7 @@
 
 .dayBody {
     margin-top: 10px;
-    background-color: rgba(224, 218, 164, 0.3);
-    /* background:radial-gradient( rgba(224, 218, 164, 0.8) , rgba(224, 218, 164, 0) ); */   
+    background-color: rgba(224, 218, 164, 0.3);    
 }
 
 .humidity {
@@ -77,10 +77,7 @@
 }
 
 .dayFooter::-webkit-scrollbar{
-    height: 6px;
-    /* width: 4px; */
-    /* background: gray; */
-    
+    height: 6px;    
 }
 
 /* Track */
@@ -88,10 +85,9 @@
     background: transparent; 
     border-radius: 10px;
 }
-.dayFooter::-webkit-scrollbar-track:hover {
-    /* background: #555;  */
-    background-color: rgba(63, 63, 61, 0.4);
 
+.dayFooter::-webkit-scrollbar-track:hover {   
+    background-color: rgba(63, 63, 61, 0.4);
 }
  
 /* Handle */
@@ -103,12 +99,6 @@
     background: white;
     border-radius: 10px;
 }
-
-
-/*for the media*/
-/* .dayFooter::-webkit-scrollbar {
-    display: none;
-  } */
 
 .temp {
     display: flex;   

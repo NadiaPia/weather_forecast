@@ -3,21 +3,12 @@ import './Navbar.css';
 import { MagnifyingGlass } from "phosphor-react";
 import axios from 'axios';
 import Pin from '../assets/pinMap.png';
-import secrets from '../secrets.json'
-
-
-
+import secrets from '../secrets.json';
 
 function Navbar(props) {
 
     const [cities, setCities] = useState([]);
-    //const [inputValue, setInputValue] = useState("");
     const [inputCity, setInputCity] = useState("");
-
-    // const searchWeather = () => {
-    //     props.getWeather();
-    //     document.getElementById("input").blur(); //unfocus the input after enter or clicking of the MagnifyingGlass
-    // }
 
     const countryShorts = {
         "United Arab Emirates": "UAE",
@@ -26,9 +17,7 @@ function Navbar(props) {
         "Соединенные Штаты Америки": "США",
     }
     const searchCity = (city) => {
-        setInputCity(city)
-
-        //props.setLocation(city);
+        setInputCity(city)       
         if (!city) return;
         axios.get(`http://api.weatherapi.com/v1/search.json?key=${secrets.SECRET_KEY}&q=${city}`)
             .then((response) => {

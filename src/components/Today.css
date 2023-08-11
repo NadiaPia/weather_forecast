@@ -1,25 +1,25 @@
-.todayContainer {    
-    display: flex; 
+.todayContainer {
+    display: flex;
    padding-top: 30px;
 }
 
 .todayContent {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     height: 40%;
     padding-left: 5%;
-    padding-right: 5%;    
+    padding-right: 5%;
     color: white;
     width: 100%;
-    justify-content: center;  
-    overflow-x: auto;  
+    justify-content: center;
+    overflow-x: auto;
     padding-bottom: 1em;
 }
 
-.currentTemp {    
+.currentTemp {
     display: flex;
-    justify-content: space-between;   
-    width: 100%;   
+    justify-content: space-between;
+    width: 100%;
 }
 
 .tempValue {
@@ -27,16 +27,16 @@
     display: flex;
 }
 
-.celsium {    
+.celsium {
     font-size: 30px;
-    color: white;    
+    color: white; 
     margin: 0;
 }
 
-.symbol {    
+.symbol {  
     width: 50%;
 }
-.symbolContainer {    
+.symbolContainer {
     width: 30%;
 }
 
@@ -52,40 +52,36 @@
 }
 
 .data {
-    display: flex;    
+    display: flex;
     justify-content: flex-start;
     font-size: small;
 }
 
-
 /*--------------------------Chart-------------------------*/
 
-.chartBox {    
+.chartBox {
     overflow-x: auto;
     background-color: rgba(224, 218, 164, 0.336);
 }
 
 .chartBox::-webkit-scrollbar{
     height: 6px;
-    /* width: 4px; */
-    /* background: gray; */
-    
 }
 
 /* Track */
+
 .chartBox::-webkit-scrollbar-track {
-    background: transparent; 
+    background: transparent;
     border-radius: 10px;
 }
 .chartBox::-webkit-scrollbar-track:hover {
-    /* background: #555;  */
     background-color: rgba(63, 63, 61, 0.4);
-
 }
  
 /* Handle */
+
 .chartBox::-webkit-scrollbar-thumb {
-  background: transparent;   
+  background: transparent;
 }
 
 .chartBox::-webkit-scrollbar-thumb:horizontal{
@@ -93,14 +89,11 @@
     border-radius: 10px;
 }
 
-
-
-.chartContainer {        
+.chartContainer {    
     width: 1200px;
     margin-top: 30px;
     position: relative;
 }
-
 
 /*-------------------------------------------------------*/
 
@@ -113,7 +106,7 @@
 .todayDetails {
     display: flex;
     background-color: rgba(224, 218, 164, 0.336);
-    padding: 2px;   
+    padding: 2px; 
 }
 
 .detailsParameters {
@@ -149,10 +142,10 @@
 .astroDetails {
     display: flex;
     background-color: rgba(224, 218, 164, 0.336);
-    padding: 2px;   
+    padding: 2px;
 }
 
-.astroParameters {   
+.astroParameters {
     margin-right: 5em;
     font-size: small;
     display: flex;
@@ -165,7 +158,7 @@
     padding: 0;
 }
 
-.astroValues {   
+.astroValues {
     display: flex;
     flex-direction: column;
     align-items: start;

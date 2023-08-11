@@ -8,11 +8,8 @@ function NDays(props) {
       {props.data.forecast.forecastday.map((day) => ( 
         <Day day={day}/>
       ))}
-
-
     </div>
   )
 }
 
 export default NDays;
-//props.data.forecast.forecastday
