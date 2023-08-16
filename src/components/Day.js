@@ -69,9 +69,9 @@ function Day(props) {
 
           <div className="dayFooter">
 
-            {props.day.hour.map((everyhour) => {
+            {props.day.hour.map((everyhour, key) => {
               return (
-                <div className="hourBlock">
+                <div className="hourBlock" key={`day-${day}-hour-${key}`}>
                   <div className='temp'>{Math.round(everyhour.temp_c)}<p className="celsiumDay">&#176;</p></div>
                   <div className='hourSymbol'><img alt="pic" src={everyhour.condition.icon} /></div>
                   <div className='hourValue'>                    

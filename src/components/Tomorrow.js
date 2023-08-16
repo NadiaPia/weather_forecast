@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { timeFormater } from "../helpers/timeHelpers";
+import { timeFormater, timeTransformer } from "../helpers/timeHelpers";
 import './Tomorrow.css';
 import LineChart from './LineChart';
 
@@ -123,10 +123,10 @@ function Tomorrow(props) {
 
                             <div className='tomorrowAstroValues'>
                                 <div>
-                                    {props.data.forecast.forecastday[1].astro.sunrise}
+                                    {timeTransformer(props.data.forecast.forecastday[1].astro.sunrise)}
                                 </div>
                                 <div>
-                                    {props.data.forecast.forecastday[1].astro.sunset}
+                                    {timeTransformer(props.data.forecast.forecastday[1].astro.sunset)}
                                 </div>
                             </div>
                         </div>

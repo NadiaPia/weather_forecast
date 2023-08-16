@@ -20,7 +20,7 @@ function App() {
 
     axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${secrets.SECRET_KEY}&q=${location.name}&q=${location.region}&q=${location.country}&days=3&aqi=yes&alerts=no`)
       .then((response) => {
-        console.log("response.data", response.data);
+        console.log("response.data to App.js", response.data);
         setData(response.data);
         
       }).catch((error) => {

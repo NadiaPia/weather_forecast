@@ -21,7 +21,7 @@ function Navbar(props) {
         if (!city) return;
         axios.get(`https://api.weatherapi.com/v1/search.json?key=${secrets.SECRET_KEY}&q=${city}`)
             .then((response) => {
-                console.log("response about the city", response.data);
+                console.log("response about the city to Navbar", response.data);
                 if (response.data.length > 0) {
                     setCities(response.data)
                 }

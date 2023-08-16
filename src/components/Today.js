@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Today.css';
-import { timeFormater } from "../helpers/timeHelpers";
+import { timeFormater, timeTransformer } from "../helpers/timeHelpers";
 import LineChart from './LineChart';
 
 function Today(props) {
@@ -16,6 +16,7 @@ function Today(props) {
             temp: hour.temp_c
         }
     });
+    
 
     //console.log("hourly", hourly)// [{hour: '01', temp: 25.9}, {hour: '02', temp: 25.6}, ...]     
 
@@ -128,10 +129,10 @@ function Today(props) {
 
                             <div className='astroValues'>
                                 <div>
-                                    {props.data.forecast.forecastday[0].astro.sunrise}
+                                {timeTransformer(props.data.forecast.forecastday[0].astro.sunrise)}
                                 </div>
                                 <div>
-                                    {props.data.forecast.forecastday[0].astro.sunset}
+                                    {timeTransformer(props.data.forecast.forecastday[0].astro.sunset)}
                                 </div>
                             </div>
                         </div>
