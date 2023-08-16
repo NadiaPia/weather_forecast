@@ -13,7 +13,7 @@ function Tomorrow(props) {
     const { year, day, month, hour, min, dayOfWeek } = timeFormater(props.data.forecast.forecastday[1].date)
     //console.log("props.data.forecast.forecastday[1].date", props.data.forecast.forecastday[1].date)
 
-    const hourly = (props.data.forecast.forecastday[0].hour || []).map((hour, i) => {
+    const hourly = (props.data.forecast.forecastday[1].hour || []).map((hour, i) => {
         //console.log("hourly", i, timeFormater(hour.time).hour, hour.temp_c) //[0 '2023-07-07 00:00' 15.8,   1 '2023-07-07 01:00' 15.1 ...]
         return {
             hour: timeFormater(hour.time).hour,
