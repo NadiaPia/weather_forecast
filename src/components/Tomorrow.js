@@ -16,7 +16,7 @@ function Tomorrow(props) {
     const hourly = (props.data.forecast.forecastday[1].hour || []).map((hour, i) => {
         //console.log("hourly", i, timeFormater(hour.time).hour, hour.temp_c) //[0 '2023-07-07 00:00' 15.8,   1 '2023-07-07 01:00' 15.1 ...]
         return {
-            hour: timeFormater(hour.time).hour,
+            hour: `${timeFormater(hour.time).hour}:00`,
             temp: hour.temp_c
         }
 
@@ -24,7 +24,7 @@ function Tomorrow(props) {
 
     useEffect(() => {
         setTempData({
-            labels: (hourly || []).map((data) => (Number(data.hour).toString())), //['00:00', '01:00','02:00','03:00'...]
+            labels: (hourly || []).map((data) => (data.hour)), //['00:00', '01:00','02:00','03:00'...]
             datasets: [{
                 data: (hourly || []).map((data) => Math.round(data.temp)),
                 backgroundColor: "rgba(238, 252, 66, 0.85)", //optinal

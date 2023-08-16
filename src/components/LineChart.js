@@ -29,11 +29,7 @@ const options = {
     x: {
       title: {
         display: true,
-        text: "hours",
-        color: "white",
-        font: {
-          size: 12,
-        }  
+        text: " ",
       },
       
       border: {
@@ -48,7 +44,7 @@ const options = {
       ticks: {
        color: "white",
        font: {
-        size: 10,        
+        size: 12,        
        },       
       } 
         
