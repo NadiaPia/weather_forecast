@@ -29,9 +29,9 @@ function App() {
   };
 
   useEffect(() => {
-    if(!location.country) return;
+    if(!location.name) return;
     getWeather()
-  }, [location.country])
+  }, [location]);
 
   return (
 
