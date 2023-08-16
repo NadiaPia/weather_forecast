@@ -103,6 +103,7 @@
     justify-content: flex-start;
     padding-bottom: 0.4em;
     color: white;
+    user-select: none; /*user won't be able to copy the text*/
   }
 
   .pinSymbol {

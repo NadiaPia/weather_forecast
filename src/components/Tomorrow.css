@@ -53,10 +53,7 @@
 }
 
 .tomorrowChartBox::-webkit-scrollbar{
-    height: 6px;
-    /* width: 4px; */
-    /* background: gray; */
-    
+    height: 6px;    
 }
 
 /* Track */
@@ -64,10 +61,8 @@
     background: transparent; 
     border-radius: 10px;
 }
-.tomorrowChartBox::-webkit-scrollbar-track:hover {
-    /* background: #555;  */
+.tomorrowChartBox::-webkit-scrollbar-track:hover {   
     background-color: rgba(63, 63, 61, 0.4);
-
 }
  
 /* Handle */

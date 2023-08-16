@@ -5,9 +5,7 @@ import Navbar from './components/Navbar';
 import Today from './components/Today';
 import Tomorrow from './components/Tomorrow';
 import NDays from './components/NDays';
-import secrets from './secrets.json'
-
-
+import secrets from './secrets.json';
 
 function App() {
 
@@ -20,14 +18,13 @@ function App() {
 
     setHide(true);
 
-    axios.get(`http://api.weatherapi.com/v1/forecast.json?key=${secrets.SECRET_KEY}&q=${location.name}&q=${location.region}&q=${location.country}&days=3&aqi=yes&alerts=no`)
+    axios.get(`https://api.weatherapi.com/v1/forecast.json?key=${secrets.SECRET_KEY}&q=${location.name}&q=${location.region}&q=${location.country}&days=3&aqi=yes&alerts=no`)
       .then((response) => {
-        console.log("response.dataaaaaaaaaaa", response.data);
-
+        console.log("response.data", response.data);
         setData(response.data);
         
       }).catch((error) => {
-        console.log("errorrrr", error);
+        console.log("error", error);
       });
   };
 

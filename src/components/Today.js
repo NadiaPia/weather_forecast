@@ -4,10 +4,8 @@ import { timeFormater } from "../helpers/timeHelpers";
 import LineChart from './LineChart';
 
 function Today(props) {
-
     //props.data.location.localtime => 2023-07-05 12:43
-    const [tempData, setTempData] = useState(null)
-
+    const [tempData, setTempData] = useState(null);
 
     const { year, day, month, hour, min, dayOfWeek } = timeFormater(props.data.location.localtime) //setLocalTime(response.data.location.localtime); //Today, Tomorrow, 3 days
     //const dayOfWeek = findWeekDay(props.data.forecast.forecastday[0].date)
@@ -17,10 +15,9 @@ function Today(props) {
             hour: timeFormater(hour.time).hour,
             temp: hour.temp_c
         }
-
     });
 
-    //console.log("hourlyyy", hourly)// [{hour: '01', temp: 25.9}, {hour: '02', temp: 25.6}, ...]     
+    //console.log("hourly", hourly)// [{hour: '01', temp: 25.9}, {hour: '02', temp: 25.6}, ...]     
 
     useEffect(() => {
         setTempData({
@@ -34,11 +31,7 @@ function Today(props) {
                 pointBackgroundColor: "yellow",
                 pointRadius: 1,
                 tension: 0.1,
-
-            }],
-            
-
-
+            }],  
         })
 
     }, [props.data.forecast.forecastday[0].hour])

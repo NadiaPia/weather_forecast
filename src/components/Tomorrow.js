@@ -103,10 +103,6 @@ function Tomorrow(props) {
 
                     </div>
 
-
-
-
-
                     <div className="tomorrowAstroContainer">
 
                         <div className='tomorrowAstroTitle'>
@@ -137,13 +133,9 @@ function Tomorrow(props) {
 
                     </div>
                 </div>
-
             </div>
-
-
-
         </div>
     )
 }
 
-export default Tomorrow
+export default Tomorrow;

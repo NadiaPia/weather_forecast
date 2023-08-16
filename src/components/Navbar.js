@@ -19,7 +19,7 @@ function Navbar(props) {
     const searchCity = (city) => {
         setInputCity(city)       
         if (!city) return;
-        axios.get(`http://api.weatherapi.com/v1/search.json?key=${secrets.SECRET_KEY}&q=${city}`)
+        axios.get(`https://api.weatherapi.com/v1/search.json?key=${secrets.SECRET_KEY}&q=${city}`)
             .then((response) => {
                 console.log("response about the city", response.data);
                 if (response.data.length > 0) {
