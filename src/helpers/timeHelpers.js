@@ -39,7 +39,9 @@ export const timeFormater = (datetime) => {
     date.setHours(date.getHours() + (offset / 60)) //shift hours of the date to differance with UTC
     const weekdayIndex = date.getDay();
     const dayOfWeek = weekday[weekdayIndex];
+    //console.log("hour", hour)
     return { year, day, month, hour, min, dayOfWeek };
+    
 };
 
 export const timeTransformer = (amPmTime) => { //should have format 05:55 AM or 06:20 PM
