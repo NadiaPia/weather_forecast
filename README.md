@@ -1,3 +1,21 @@
+# Weather-forecast
+
+## Overview
+
+"Weather-forecast" application displays the weather forecast for the upcoming several days. In this case, it's for three days, but the number of days can be increased by choosing the paid subscription of the third-party API. This application uses data from two third-party APIs. One, that is used for city search, allows a dropdown list of cities that match the user's input to appear as they start typing a city name. The second one sends weather forecast data.
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
