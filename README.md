@@ -8,6 +8,7 @@ This project was deployed on the Firebase (FE): [Link to deployed prject](https:
 
 - ### Cities list dropdown.
 !["Search city"](https://github.com/NadiaPia/weather_forecast/blob/main/src/assets/searchCity.png =250x250)
+<img src="https://github.com/NadiaPia/weather_forecast/blob/main/src/assets/searchCity.png"  width="60%" height="30%">
 
 
 
