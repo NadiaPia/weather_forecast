@@ -9,6 +9,9 @@ This project was deployed on the Firebase (FE): [Link to deployed prject](https:
 - ### Cities list dropdown.
 <img src="https://github.com/NadiaPia/weather_forecast/blob/main/src/assets/searchCity.png"  width="60%" height="30%">
 
+- ### Today's weather forecast.
+<img src="https://github.com/NadiaPia/weather_forecast/blob/main/src/assets/Today.jpg"  width="60%" height="30%">
+
 
 
 
