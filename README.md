@@ -6,7 +6,8 @@
 
 This project was deployed on the Firebase (FE): [Link to deployed prject](https://weather-forecast-c4930.web.app/).
 
-
+- ### Cities list dropdown.
+!["Search city"](https://github.com/NadiaPia/weather_forecast/blob/main/src/assets/searchCity.png | width=100)
 
 
 
