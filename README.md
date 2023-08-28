@@ -12,6 +12,11 @@ This project was deployed on the Firebase (FE): [Link to deployed prject](https:
 - ### Today's weather forecast.
 <img src="https://github.com/NadiaPia/weather_forecast/blob/main/src/assets/Today.jpg"  width="60%" height="30%">
 
+- ### Tomorrow's weather forecast.
+<img src="https://github.com/NadiaPia/weather_forecast/blob/main/src/assets/Tomorrow.jpg">
+
+- ### Several days' weather forecast. Clicking on the particular day allows dropdown of details about the weather of the day.
+<img src="https://github.com/NadiaPia/weather_forecast/blob/main/src/assets/3days.jpg">
 
 
 
